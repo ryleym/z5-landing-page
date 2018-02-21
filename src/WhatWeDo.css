@@ -1,0 +1,24 @@
+.WhatWeDoDiv {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+
+.WhatWeDoItem {
+	width: 33%;
+}
+
+.WhatWeDoAvatar {
+	border-style: solid;
+	border-color: #646464;
+	border-width: 2px;
+}
+
+.WhatWeDoBigText {
+	font-size: 20px;
+	margin: 5px;
+}
+
+.WhatWeDoSmallText {
+	margin: 5px;
+}
