@@ -63,11 +63,12 @@ class TopBar extends Component {
             style={{color: 'white'}} 
             label="Contact"
          />
-          <FlatButton 
-            style={{color: 'white'}} 
-            label={this.state.logtext}
-            onClick={this.handleLog.bind(this)}
-          />
+          {this.state.user
+            ? 
+              <FlatButton style={{color: 'white'}} label="Logout" onClick={this.handleLog.bind(this)}/> 
+            :
+              <FlatButton style={{color: 'white'}} label="Login" onClick={this.handleLog.bind(this)}/>
+          }
           <Avatar>
             {
               this.state.user ? <div>{this.state.user.displayName[0]}</div> : <div>&zwnj;</div>

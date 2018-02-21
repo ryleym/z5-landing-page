@@ -4,4 +4,10 @@
   width: 85%;
   font-family: 'Roboto', sans-serif;
   justify-content: center;
+  height: 100%;
+}
+
+.AppBackground {
+	background-color: #BBDEFB;
+	padding: 0 0;
 }

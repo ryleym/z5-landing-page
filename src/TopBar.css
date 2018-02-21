@@ -1,12 +1,13 @@
 .TopBar {
   position: sticky;
   top: 0;
+  z-index: 1;
   background-color: #2196F3;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  box-shadow: 2px 2px 2px grey;
+  /*box-shadow: 2px 2px 2px grey;*/
+  margin-bottom: 10px;
 }
 
 .TopBarLogoDiv {
@@ -16,9 +17,11 @@
 .TopBarLogo {
   width: 100%;
   height: auto;
+  margin: auto;
 }
 
 .TopBarButtonsDiv {
   width: 90%;
+  margin: 0 auto;
   text-align: right;
 }
