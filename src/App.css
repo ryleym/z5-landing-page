@@ -10,3 +10,8 @@
 	background-color: #BBDEFB;
 	padding: 0 0;
 }
+
+html {
+    position: relative;
+    min-height: 100%;
+}

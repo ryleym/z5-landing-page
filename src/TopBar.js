@@ -13,7 +13,7 @@ class TopBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logtext: 'Login'
+      scrolled: 0
     }
   }
 
@@ -30,16 +30,16 @@ class TopBar extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', (event) => {
-          var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
-          var D = document;
-
-    var docheight = Math.max(D.body.scrollHeight, D.documentElement.scrollHeight,
+      var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+      var D = document;
+      var docheight = Math.max(D.body.scrollHeight, D.documentElement.scrollHeight,
         D.body.offsetHeight, D.documentElement.offsetHeight,
         D.body.clientHeight, D.documentElement.clientHeight);
-    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-    var trackLength = docheight - winheight
-    var pctScrolled = Math.floor(scrollTop/trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
-    console.log(pctScrolled + '% scrolled')
+      var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+      var trackLength = docheight - winheight
+      var pctScrolled = Math.floor(scrollTop/trackLength * 100)
+      this.setState({scrolled: pctScrolled});
+      console.log(this.state.scrolled);
     })
   }
 

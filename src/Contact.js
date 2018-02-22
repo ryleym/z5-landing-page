@@ -6,7 +6,7 @@ import './Contact.css';
 class Contact extends Component {
 	render() {
 		return (
-			<Paper id="contact" className="ContactDiv">
+			<Paper className="ContactDiv">
 				<div className="ContactUs">contact us.</div>
 				<TextField
 					style={{margin: 5, width: 'calc(100% * (1 / 3) - 10px)'}}
