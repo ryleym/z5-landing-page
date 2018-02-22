@@ -29,18 +29,6 @@ class TopBar extends Component {
 
 
   componentDidMount() {
-    window.addEventListener('scroll', (event) => {
-      var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
-      var D = document;
-      var docheight = Math.max(D.body.scrollHeight, D.documentElement.scrollHeight,
-        D.body.offsetHeight, D.documentElement.offsetHeight,
-        D.body.clientHeight, D.documentElement.clientHeight);
-      var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-      var trackLength = docheight - winheight
-      var pctScrolled = Math.floor(scrollTop/trackLength * 100)
-      this.setState({scrolled: pctScrolled});
-      console.log(this.state.scrolled);
-    })
   }
 
   handleLog() {
@@ -67,31 +55,30 @@ class TopBar extends Component {
           <img
             className="TopBarLogo"
             src="zero5.png"
+            onClick={() => history.push('')}
           />
         </div>
         <div className="TopBarButtonsDiv">
           <FlatButton 
             className="TopBarButton"
             style={{color: '#4d4d4d'}} 
-            label="about us"
+            // label="about us"
             onClick={() => scrollToElement('#about')}
-          />
+          >about us</FlatButton>
+          <FlatButton 
+            className="TopBarButton"
+            style={{color: '#4d4d4d'}}
+            onClick={() => scrollToElement('#about')}
+          >contact us</FlatButton>
           <FlatButton 
             style={{color: '#4d4d4d'}} 
-            label="contact us"
             onClick={() => scrollToElement('#contact')}
-          />
-          <FlatButton 
-            style={{color: '#4d4d4d'}} 
-            label="what we do"
-            onClick={() => scrollToElement('#contact')}
-          />
+          ><div>contact us</div></FlatButton>
           ||
           <FlatButton
             style={{color: '#4d4d4d'}}
-            label="garages"
             onClick={() => history.push('garages')}
-          />
+          >garages</FlatButton>
         </div>
       </Paper>
     );

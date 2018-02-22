@@ -8,6 +8,28 @@ import Paper from 'material-ui/Paper';
 import ArrowDownward from 'material-ui-icons/ArrowDownward';
 
 class MainPage extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			scrolled: 0
+		}
+	}
+
+	componentWillMount() {
+		window.addEventListener('scroll', (event) => {
+      		var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+      		var D = document;
+      		var docheight = Math.max(D.body.scrollHeight, D.documentElement.scrollHeight,
+        		D.body.offsetHeight, D.documentElement.offsetHeight,
+        		D.body.clientHeight, D.documentElement.clientHeight);
+      		var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+      		var trackLength = docheight - winheight
+      		var pctScrolled = Math.floor(scrollTop/trackLength * 100)
+      		this.setState({scrolled: pctScrolled});
+    })
+	}
+
 	render() {
 		return (
 			<div className="AppDiv">
@@ -22,7 +44,13 @@ class MainPage extends Component {
 					<div className="SmallTextDiv">zero5 started because we decided to stop putting up with the —. We are a young, ambitious, startup who wishes to bring a new technology to disrupt the outdated, unsexy parking market.</div>
 				</Paper>
 				<Contact id="contact"/>
-				<div className="footer"><ArrowDownward/></div>
+				{
+					this.state.scrolled != 100
+					?
+						<div className="footer"><ArrowDownward/></div>
+					:
+						<div style={{opacity: .0}}className="footer"><ArrowDownward/></div>
+				}
 			</div>
 		);
 	}

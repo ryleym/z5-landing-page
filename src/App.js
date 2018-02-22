@@ -4,6 +4,7 @@ import TopBar from './TopBar.js';
 import history from './history.js';
 import MainPage from './MainPage.js';
 import './App.css';
+import GaragePage from './GaragePage.js';
 
 class App extends Component {
 	render() {
@@ -11,6 +12,7 @@ class App extends Component {
 			<Router history={history} >
 				<div className="AppBackground">
 					<Route exact path="/" component={MainPage} />
+					<Route exact path="/garages" component={GaragePage} />
 				</div>
 			</Router>
 		);
