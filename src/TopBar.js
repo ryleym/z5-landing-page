@@ -7,6 +7,7 @@ import './TopBar.css';
 import history from './history.js';
 import scrollToElement from 'scroll-to-element';
 import firebase, {provider, auth} from './firebase.js';
+import Paper from 'material-ui/Paper';
 
 class TopBar extends Component {
   constructor(props) {
@@ -25,6 +26,22 @@ class TopBar extends Component {
     } 
   })
 }
+
+
+  componentDidMount() {
+    window.addEventListener('scroll', (event) => {
+          var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+          var D = document;
+
+    var docheight = Math.max(D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight);
+    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+    var trackLength = docheight - winheight
+    var pctScrolled = Math.floor(scrollTop/trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+    console.log(pctScrolled + '% scrolled')
+    })
+  }
 
   handleLog() {
     if (this.state.user) {
@@ -45,7 +62,7 @@ class TopBar extends Component {
 
   render() {
     return (
-      <div className="TopBar">
+      <Paper className="TopBar">
         <div className="TopBarLogoDiv">
           <img
             className="TopBarLogo"
@@ -55,27 +72,28 @@ class TopBar extends Component {
         <div className="TopBarButtonsDiv">
           <FlatButton 
             className="TopBarButton"
-            style={{color: 'white'}} 
-            label="About"
+            style={{color: '#4d4d4d'}} 
+            label="about us"
             onClick={() => scrollToElement('#about')}
           />
           <FlatButton 
-            style={{color: 'white'}} 
-            label="Contact"
-         />
-          {this.state.user
-            ? 
-              <FlatButton style={{color: 'white'}} label="Logout" onClick={this.handleLog.bind(this)}/> 
-            :
-              <FlatButton style={{color: 'white'}} label="Login" onClick={this.handleLog.bind(this)}/>
-          }
-          <Avatar>
-            {
-              this.state.user ? <div>{this.state.user.displayName[0]}</div> : <div>&zwnj;</div>
-            }
-          </Avatar>
+            style={{color: '#4d4d4d'}} 
+            label="contact us"
+            onClick={() => scrollToElement('#contact')}
+          />
+          <FlatButton 
+            style={{color: '#4d4d4d'}} 
+            label="what we do"
+            onClick={() => scrollToElement('#contact')}
+          />
+          ||
+          <FlatButton
+            style={{color: '#4d4d4d'}}
+            label="garages"
+            onClick={() => history.push('garages')}
+          />
         </div>
-      </div>
+      </Paper>
     );
   }
 }

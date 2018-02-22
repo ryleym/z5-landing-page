@@ -1,11 +1,14 @@
 .WhatWeDoDiv {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 10px;
+	padding: 40px;
+	margin-bottom: 10px;
+	/*text-align: left;*/
 }
 
 .WhatWeDoItem {
-	width: 33%;
+	width: calc(100% * (1 / 3) - 20px);
+	margin: 10px;
 }
 
 .WhatWeDoAvatar {
@@ -16,9 +19,10 @@
 
 .WhatWeDoBigText {
 	font-size: 20px;
-	margin: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 .WhatWeDoSmallText {
-	margin: 5px;
+	text-align: left;
 }

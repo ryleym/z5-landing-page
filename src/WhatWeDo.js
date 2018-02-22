@@ -21,7 +21,6 @@ class WhatWeDo extends Component {
 					<Avatar className="WhatWeDoAvatar" style={{color: '#F0BE41', backgroundColor: 'white'}}>C</Avatar>
 					<div className="WhatWeDoBigText" style={{color: '#F0BE41'}}>Connect</div>
 					<div className="WhatWeDoSmallText">we connect garages, drivers, and vehicles for seamless parking for all</div>
-
 				</div>
 			</Paper>
 		);
