@@ -13,7 +13,8 @@ class TopBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrolled: 0
+      scrolled: 0,
+      show_buttons: true
     }
   }
 
@@ -29,6 +30,9 @@ class TopBar extends Component {
 
 
   componentDidMount() {
+    if (window.innerWidth < 650) {
+      this.setState({show_buttons: false})
+    }
   }
 
   handleLog() {
@@ -59,6 +63,10 @@ class TopBar extends Component {
           />
         </div>
         <div className="TopBarButtonsDiv">
+        {
+          this.state.show_buttons ?
+          =
+        }
           <FlatButton 
             className="TopBarButton"
             style={{color: '#4d4d4d'}} 

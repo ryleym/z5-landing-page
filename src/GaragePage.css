@@ -1,0 +1,12 @@
+.GaragePage {
+}
+
+.GarageSidebar {
+	display: inline-block;
+	width: 25%;
+}
+
+.GarageContent {
+	display: inline-block;
+	width: 75%;
+}

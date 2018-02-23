@@ -19,7 +19,6 @@ class Contact extends Component {
 		console.log(this.state);
 		fetch('http://127.0.0.1:5000/mail', {
 			method: 'POST',
-			// mode: 'no-cors',
 			headers: {
         		'Content-Type': 'application/json',
     		},
@@ -57,7 +56,7 @@ class Contact extends Component {
 					multiLine={true}
 					onChange={(event, message) => this.setState({message})}
 				/> <br/>
-				<FlatButton label="Send" onClick={this.send_mail.bind(this)}/>
+				<FlatButton className="buttonguy" label="Send" onClick={this.send_mail.bind(this)}/>
 			</Paper>
 		);
 	}
