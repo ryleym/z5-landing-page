@@ -6,7 +6,7 @@ import './WhatWeDo.css';
 class WhatWeDo extends Component {
 	render() {
 		return (
-			<Paper className="WhatWeDoDiv">
+			<Paper id="what" className="WhatWeDoDiv">
 				<div className="WhatWeDoItem">
 					<Avatar className="WhatWeDoAvatar" style={{color: '#5283EC', backgroundColor: 'white'}}>a</Avatar>
 					<div className="WhatWeDoBigText" style={{color: '#5283EC'}}>automate</div>

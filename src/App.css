@@ -1,9 +1,21 @@
+
+
 .AppDiv {
 	 text-align: center;
   margin: 0 auto;
   width: 85%;
   font-family: 'Roboto', sans-serif;
   justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+	.AppDiv {
+		text-align: center;
+		margin: 0 auto;
+		width: 95%;
+		font-family: 'Roboto', sans-serif;
+		justify-content: center;
+	}
 }
 
 .AppBackground {

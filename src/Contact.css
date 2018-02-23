@@ -1,7 +1,27 @@
+
+
 .ContactDiv {
 	padding: 40px;
 	text-align: left;
 }
+
+@media screen and (min-width: 1050px) {
+	.ContactField {
+		margin: 5px;
+		width: calc(100% * (1 / 3) - 10px);
+	}
+}
+
+
+
+@media screen and (max-width: 1049px) {
+	.ContactField {
+		margin-right: 25%;
+		/*width: calc(100%);*/
+	}
+}
+
+
 
 .ContactUs {
 	font-size: 30px;

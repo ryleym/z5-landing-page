@@ -17,6 +17,7 @@ class MainPage extends Component {
 	}
 
 	componentWillMount() {
+		console.log(window.screenWidth)
 		window.addEventListener('scroll', (event) => {
       		var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
       		var D = document;

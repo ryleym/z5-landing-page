@@ -25,7 +25,8 @@ class Contact extends Component {
     		},
 			body: JSON.stringify({
 				sender: this.state.sender,
-				message: this.state.message
+				message: "name: " + this.state.name + "<br/>email: " + this.state.sender + "<br/>message: " + this.state.message,
+				subject: this.state.subject,
 			})
 		})
 			.then((response) => console.log(response));
@@ -33,20 +34,20 @@ class Contact extends Component {
 
 	render() {
 		return (
-			<Paper className="ContactDiv">
+			<Paper id="contact" className="ContactDiv">
 				<div className="ContactUs">contact us.</div>
 				<TextField
-					style={{margin: 5, width: 'calc(100% * (1 / 3) - 10px)'}}
+					className="ContactField"
 					hintText="your name"
 					onChange={(event, name) => this.setState({name})}
 				/>
 				<TextField
-					style={{margin: 5, width: 'calc(100% * (1 / 3) - 10px)'}}
+					className="ContactField"
 					hintText="your e-mail"
 					onChange={(event, sender) => this.setState({sender})}
 				/>
 				<TextField
-					style={{margin: 5, width: 'calc(100% * (1 / 3) - 10px)'}}
+					className="ContactField"
 					hintText="subject"
 					onChange={(event, subject) => this.setState({subject})}
 				/> <br/>

@@ -68,8 +68,8 @@ class TopBar extends Component {
           <FlatButton 
             className="TopBarButton"
             style={{color: '#4d4d4d'}}
-            onClick={() => scrollToElement('#about')}
-          >contact us</FlatButton>
+            onClick={() => scrollToElement('#what')}
+          >what we do</FlatButton>
           <FlatButton 
             style={{color: '#4d4d4d'}} 
             onClick={() => scrollToElement('#contact')}
